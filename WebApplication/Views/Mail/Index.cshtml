@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<MailViewModel>
+
+<div class="row">
+    <h2>Mails</h2>
+    <div>Time to load Mails (https://graph.microsoft.com:443/v1.0/me/mailFolders/Inbox/messages) in Milliseconds: @ViewBag.ElapsedTimeMails</div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Subject
+                </th>
+                <th style="width:600px">
+                    Body
+                </th>
+                <th>
+                    Has Attachments
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Body)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HasAttachments)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

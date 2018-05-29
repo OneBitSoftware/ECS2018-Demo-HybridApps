@@ -1,0 +1,26 @@
+﻿@model WebApplication.Models.HeathCheckStatus
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Health Check Report</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MongoDbMessage)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.MongoDbMessage)
+            </td>
+        </tr>
+    </tbody>
+</table>

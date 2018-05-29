@@ -1,0 +1,21 @@
+﻿@page
+@inject Microsoft.Extensions.Configuration.IConfiguration config
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>TestSecret</td>
+            <td>@config["TestSecret"]</td>
+        </tr>
+        <tr>
+            <td>Secrets:NestedSecret</td>
+            <td>@config["Secrets:NestedLevelKey"]</td>
+        </tr>
+    </tbody>
+</table>
